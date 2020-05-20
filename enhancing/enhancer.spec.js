@@ -20,3 +20,24 @@ describe("enhancer.js", function() {
             expect(repairItem).toEqual(expected); // assertion
         });
     });
+
+    describe(".succeed()", function() {
+        // arrange --> setup the world
+        // act --> execute the code we're testing
+        // assert --> check our assumptions
+        it("should raise the enhancements by 1", function() {
+            const item = {
+                name: "Iron Sword",
+                durability: 23,
+                enhancement: 15
+            };
+            const expected = {
+                name: "Iron Sword",
+                durability: 100,
+                enhancement: 16
+            }
+            const enhanceItem = succeed(item);
+            expect(enhanceItem).toEqual(expected); // assertion
+        });
+    })
+    
