@@ -61,3 +61,20 @@ describe("enhancer.js", function() {
             expect(failItem).toEqual(expected); // assertion
             //expect(failItem).toBe(false); //fails
         });
+         //  If the item's enhancement is 15 or more, the durability of the item is decreased by 10.
+         it("should decrease durability by 10 if greater than 14", () => {
+            const item = {
+                name: "Iron Sword",
+                durability: 50,
+                enhancement: 16
+            };
+
+            const expected = {
+                name: "Iron Sword",
+                durability: 40,
+                enhancement: 16
+            };
+
+            const failItem = fail(item);
+            expect(failItem).toEqual(expected);
+        });
