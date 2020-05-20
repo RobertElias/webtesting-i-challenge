@@ -41,3 +41,23 @@ describe("enhancer.js", function() {
         });
     })
     
+    describe(".fail()", function() {
+        // arrange --> setup the world
+        // act --> execute the code we're testing
+        // assert --> check our assumptions
+        //If the item's enhancement is less than 15, the durability of the item is decreased by 5.
+        it("should decrease the durability by 5 if less than 15", function() {
+            const item = {
+                name: "Iron Sword",
+                durability: 50,
+                enhancement: 11
+            };
+            const expected = {
+                name: "Iron Sword",
+                durability: 45,
+                enhancement: 11
+            }
+            const failItem = fail(item);
+            expect(failItem).toEqual(expected); // assertion
+            //expect(failItem).toBe(false); //fails
+        });
