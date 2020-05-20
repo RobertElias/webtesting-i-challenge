@@ -78,3 +78,25 @@ describe("enhancer.js", function() {
             const failItem = fail(item);
             expect(failItem).toEqual(expected);
         });
+         //If the item's enhancement level is greater than 16, the enhancement level decreases by 1 (17 goes down to 16, 18 goes down to 17).
+         it(" should decrease durability by 1 if greater than 16", function() {
+            const item = {
+                name: "Iron Sword",
+                durability: 50,
+                enhancement: 19
+            };
+
+            const expected = {
+                name: "Iron Sword",
+                durability: 40,
+                enhancement: 18
+            };
+
+            const failItem = fail(item);
+            expect(failItem).toEqual(expected);
+        });
+
+
+    });
+
+});
